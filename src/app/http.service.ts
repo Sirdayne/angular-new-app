@@ -8,17 +8,17 @@ import { config } from './config';
 })
 export class HttpService {
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      Authorization: localStorage.getItem('token'),
+      'X-TenantID': '1'
+    })
+  };
+
   constructor(private http: HttpClient) { }
 
   public get(url: string): Observable<any> {
-    const token = localStorage.getItem('token')
     const endpoint = config.url + url;
-    const httpOptions = {
-      headers: new HttpHeaders({
-        Authorization: token,
-        'X-TenantID': '1'
-      })
-    };
-    return this.http.get(endpoint, httpOptions);
+    return this.http.get(endpoint, this.httpOptions);
   }
 }
