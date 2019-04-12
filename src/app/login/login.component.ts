@@ -20,7 +20,9 @@ export class LoginComponent implements OnInit {
 
   signIn() {
     this.authService.signIn(this.form).subscribe(res => {
-      console.log(res);
+      if (res && res.token) {
+        localStorage.setItem('token', res.token);
+      }
     });
   }
 
