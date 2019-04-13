@@ -17,8 +17,13 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
+  public post(form): Observable<any> {
+    const url = config.url + 'auth';
+    return this.http.post(url, form);
+  }
+
   public get(url: string): Observable<any> {
     const endpoint = config.url + url;
-    return this.http.get(endpoint, this.httpOptions);
+    return this.http.get(endpoint);
   }
 }

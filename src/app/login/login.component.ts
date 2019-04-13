@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService} from '../auth.service';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-login',
@@ -13,15 +13,16 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
-  constructor(private authService: AuthService) { }
+  constructor(private http: HttpService) { }
 
   ngOnInit() {
   }
 
   signIn() {
-    this.authService.signIn(this.form).subscribe(res => {
+    this.http.post(this.form).subscribe(res => {
       if (res && res.token) {
         localStorage.setItem('token', res.token);
+        localStorage.setItem('tenant', '1');
       }
     });
   }
