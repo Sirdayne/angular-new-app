@@ -15,6 +15,7 @@ import { NotesComponent } from './notes/notes.component';
 
 import { HTTP_INTERCEPTORS} from '@angular/common/http';
 import { TokenInterceptor } from './token.interceptor';
+import { HeroCreateComponent } from './hero-create/hero-create.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TokenInterceptor } from './token.interceptor';
     DashboardComponent,
     HeroIdComponent,
     LoginComponent,
-    NotesComponent
+    NotesComponent,
+    HeroCreateComponent
   ],
   imports: [
     BrowserModule,

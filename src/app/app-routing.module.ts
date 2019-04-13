@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { HeroCreateComponent } from './hero-create/hero-create.component';
 import { LoginComponent} from './login/login.component';
 import { NotesComponent} from './notes/notes.component';
 
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'heroes', component: HeroesComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
+  { path: 'hero-create', component: HeroCreateComponent },
   { path: 'login', component: LoginComponent},
   { path: 'notes', component: NotesComponent }
 ]
